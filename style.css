@@ -1,0 +1,75 @@
+/* RenewLog: mint from the icon's renewal arrow, on the icon's near-black. */
+:root { color-scheme: light dark; --bg:#f4f7f5; --fg:#0b0f14; --muted:#56616c; --accent:#047857; --on-accent:#ffffff; --tint:#e3f2ec; --card:#ffffff; --line:#dbe4df; --warn:#9a3412; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b0f14; --fg:#ecf2f0; --muted:#9aa6b4; --accent:#34d399; --on-accent:#06281c; --tint:#10261f; --card:#131a20; --line:#232c34; --warn:#fdba74; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; overflow-wrap:anywhere; }
+main { max-width:780px; margin:0 auto; padding:32px 16px 64px; }
+nav { display:flex; gap:18px; flex-wrap:wrap; font-size:15px; margin-bottom:36px; align-items:center; }
+nav a { color:var(--muted); text-decoration:none; } nav a:hover { color:var(--fg); }
+nav a.home { color:var(--fg); font-weight:650; margin-right:auto; display:flex; align-items:center; gap:8px; }
+nav img { width:24px; height:24px; border-radius:6px; }
+h1 { font-size:clamp(30px, 6vw, 44px); line-height:1.12; margin:0 0 14px; letter-spacing:-0.022em; }
+h2 { margin:48px 0 10px; font-size:24px; line-height:1.28; letter-spacing:-0.01em; } h3 { font-size:17.5px; margin:22px 0 4px; }
+p.lead { color:var(--muted); font-size:19px; margin-top:0; }
+a { color:var(--accent); }
+.cta { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:var(--on-accent); text-decoration:none; font-weight:650; padding:13px 22px; border-radius:10px; margin:8px 0 4px; }
+.cta svg { width:20px; height:20px; }
+.note { color:var(--muted); font-size:14px; }
+.muted { color:var(--muted); margin:0; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:16px 0; }
+.card > :first-child { margin-top:0; } .card > :last-child { margin-bottom:0; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+.grid .card { margin:0; } .grid h3 { margin-top:0; }
+.tools { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:32px; }
+.tools a { display:block; background:var(--tint); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:10px; padding:14px 16px; text-decoration:none; color:var(--fg); }
+.tools a strong { display:block; color:var(--accent); margin-bottom:2px; }
+.tools a span { font-size:15px; color:var(--muted); }
+.shots { display:flex; gap:12px; overflow-x:auto; padding:8px 16px 12px; margin:28px -16px 0; scroll-snap-type:x mandatory; }
+.shots img { width:200px; height:auto; border-radius:14px; flex:none; scroll-snap-align:start; background:#0b0f14; }
+ul, ol { padding-left:22px; } li { margin:5px 0; }
+table { border-collapse:collapse; width:100%; font-size:15px; margin:12px 0 0; } td, th { border-bottom:1px solid var(--line); padding:8px 6px; text-align:left; vertical-align:top; }
+th { font-weight:600; color:var(--muted); font-size:13.5px; }
+.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+footer { color:var(--muted); font-size:14px; margin-top:56px; border-top:1px solid var(--line); padding-top:16px; }
+.faq h3:first-child { margin-top:0; } .faq p { margin:0 0 6px; }
+
+/* Tools */
+input, select, button { font:inherit; color:inherit; }
+input[type=text], input[type=number], input[type=date], select { width:100%; min-height:44px; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--bg); }
+input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.field { display:block; min-width:0; } .field > span { display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:3px; }
+.row { display:grid; grid-template-columns:minmax(0,1fr) 92px 88px 112px 44px; gap:8px; align-items:end; padding:0 0 12px; }
+.row + .row .field > span { display:none; }
+.row .del { height:44px; }
+.btn, .del, .chip { min-height:44px; padding:8px 14px; border:1px solid var(--line); border-radius:8px; background:var(--card); cursor:pointer; }
+.del { padding:0; font-size:20px; color:var(--muted); background:transparent; }
+.btn.primary { background:var(--accent); color:var(--on-accent); border-color:var(--accent); font-weight:650; }
+.actions { display:flex; flex-wrap:wrap; gap:8px; }
+.result { background:var(--tint); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:16px 0 0; }
+.totals { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:6px; }
+.totals .label, .answer .label { display:block; font-size:13.5px; font-weight:600; color:var(--muted); }
+.totals strong { display:block; font-size:clamp(26px, 6.4vw, 36px); line-height:1.2; font-variant-numeric:tabular-nums; letter-spacing:-0.015em; }
+.after { font-size:15px; color:var(--muted); margin:12px 0 0; }
+.answer { padding:10px 0; border-bottom:1px solid var(--line); } .answer:first-child { padding-top:0; }
+.answer strong { display:block; font-size:clamp(19px, 4.6vw, 23px); line-height:1.3; }
+.answer .note { display:block; margin-top:2px; }
+.warn { color:var(--warn); font-weight:600; margin:10px 0 0; }
+.stakes { margin:12px 0 0; }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; } .chip { padding:6px 12px; font-size:15px; min-height:38px; border-radius:20px; }
+.radio { display:flex; flex-wrap:wrap; gap:6px 18px; margin:0 0 14px; border:0; padding:0; } .radio label { display:flex; align-items:center; gap:7px; min-height:32px; }
+summary { cursor:pointer; color:var(--accent); font-size:15px; min-height:32px; }
+.stack > * + * { margin-top:12px; }
+[hidden] { display:none !important; }
+@media (max-width: 560px) {
+  nav { gap:14px; font-size:14px; } nav a.home { width:100%; margin-bottom:2px; }
+  .row { grid-template-columns:minmax(0,1fr) 84px 108px; grid-template-areas:"name name del" "price cur per"; padding:12px 0; border-top:1px solid var(--line); }
+  .row:first-child { border-top:0; padding-top:0; }
+  .row .field:nth-child(1) { grid-area:name; }
+  .row .field:nth-child(2) { grid-area:price; }
+  .row .field:nth-child(3) { grid-area:cur; }
+  .row .field:nth-child(4) { grid-area:per; }
+  .row .del { grid-area:del; justify-self:end; width:44px; }
+  .row + .row .field > span { display:block; }
+}

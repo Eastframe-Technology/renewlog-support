@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free trial calculator: end date and reminder date</title>
+<meta name="description" content="Find when a free trial ends, the last safe day to cancel and the date to set a reminder. Calendar dates only, so daylight saving cannot shift the answer.">
+<link rel="canonical" href="https://eastframe-technology.github.io/renewlog-support/tools/free-trial-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free trial end date and reminder calculator">
+<meta property="og:description" content="Find when a free trial ends, the last safe day to cancel and the date to set a reminder. Calendar dates only, so daylight saving cannot shift the answer.">
+<meta property="og:image" content="https://eastframe-technology.github.io/renewlog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/renewlog-support/tools/free-trial-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does day one count?","acceptedAnswer":{"@type":"Answer","text":"Count from the day you signed up as day zero. A 7-day trial started on 1 November usually ends on 8 November, at about the same time of day you started. Your receipt or the store's subscription page shows the exact date, and that date wins over any calculator."}},{"@type":"Question","name":"Why tell me to cancel a day early?","acceptedAnswer":{"@type":"Answer","text":"The charge can happen at any time on the end date, and the service may run on a different time zone from yours. The App Store also asks you to cancel at least 24 hours before a trial ends. One day early clears all of that."}},{"@type":"Question","name":"What does \"1 month\" mean if I start on 31 January?","acceptedAnswer":{"@type":"Answer","text":"It ends on the last day of February: the 28th, or the 29th in a leap year. Months keep the same day number where they can and stop at the end of a short month, like most billing systems. RenewLog works the same way."}},{"@type":"Question","name":"Does daylight saving change the date?","acceptedAnswer":{"@type":"Answer","text":"No. This page works with calendar dates, not hours, so the clock change does not move the answer. Adding 24 hours at a time is what goes wrong: in the US on 1 November 2026, 24 hours after midnight is still 1 November."}},{"@type":"Question","name":"What is in the calendar file?","acceptedAnswer":{"@type":"Answer","text":"One event at 9:00 on your reminder date with an alert. It uses local time, so it rings at 9:00 on that date wherever you are. The file is made in your browser. Open it with your calendar app to add the event."}},{"@type":"Question","name":"Is what I type sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The dates and the service name stay in this browser tab."}}]}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="" width="24" height="24">RenewLog</a><a href="../tools/subscription-cost-calculator.html">Cost calculator</a><a href="../tools/free-trial-calculator.html">Trial calculator</a><a href="../guides/track-subscriptions-without-bank.html">Guides</a><a href="../index.html#support">Support</a></nav>
+
+  <h1>Free trial end date and reminder calculator</h1>
+  <p class="lead">Enter when your trial started and how long it lasts. You get the end date, the last safe day to cancel and the date to set a reminder. Nothing you type leaves this page.</p>
+
+  <form class="card stack" id="form" autocomplete="off">
+    <fieldset class="radio">
+      <legend class="note" style="padding:0;margin-bottom:4px">What do you know?</legend>
+      <label><input type="radio" name="mode" value="start" checked> When it started</label>
+      <label><input type="radio" name="mode" value="end"> When it ends</label>
+    </fieldset>
+    <div id="byStart" class="stack">
+      <label class="field"><span>Trial started on</span><input type="date" id="start"></label>
+      <div>
+        <div class="two">
+          <label class="field"><span>Trial length</span><input type="number" id="length" min="1" max="1000" value="7" inputmode="numeric"></label>
+          <label class="field"><span>Unit</span><select id="unit"><option value="day">Days</option><option value="week">Weeks</option><option value="month">Months</option><option value="year">Years</option></select></label>
+        </div>
+        <div class="chips">
+          <button type="button" class="chip" data-n="3" data-u="day">3 days</button>
+          <button type="button" class="chip" data-n="7" data-u="day">7 days</button>
+          <button type="button" class="chip" data-n="14" data-u="day">14 days</button>
+          <button type="button" class="chip" data-n="30" data-u="day">30 days</button>
+          <button type="button" class="chip" data-n="1" data-u="month">1 month</button>
+          <button type="button" class="chip" data-n="3" data-u="month">3 months</button>
+        </div>
+      </div>
+    </div>
+    <div id="byEnd" hidden>
+      <label class="field"><span>Trial ends on</span><input type="date" id="end"></label>
+    </div>
+    <label class="field"><span>Remind me</span>
+      <select id="lead"><option value="1">1 day before</option><option value="2">2 days before</option><option value="3" selected>3 days before</option><option value="7">7 days before</option><option value="14">14 days before</option></select>
+    </label>
+    <details>
+      <summary>Optional: name and price</summary>
+      <div class="stack" style="margin-top:10px">
+        <label class="field"><span>Service name, for the calendar event</span><input type="text" id="name" maxlength="60"></label>
+        <div class="three">
+          <label class="field"><span>Price after</span><input type="text" id="price" inputmode="decimal" placeholder="9.99"></label>
+          <label class="field"><span>Currency</span><select id="currency"></select></label>
+          <label class="field"><span>Billed</span><select id="period"><option value="weekly">Weekly</option><option value="monthly" selected>Monthly</option><option value="quarterly">Quarterly</option><option value="yearly">Yearly</option></select></label>
+        </div>
+      </div>
+    </details>
+    <noscript><p class="warn">This calculator needs JavaScript. The method below works on paper too.</p></noscript>
+  </form>
+
+  <div class="result" aria-live="polite">
+    <div id="result"></div>
+    <button type="button" class="btn primary" id="ics" style="margin-top:14px" hidden>Add the reminder to my calendar</button>
+  </div>
+  <p class="after">Tracking more than one? <a href="https://play.google.com/store/apps/details?id=com.eastframe.renewlog">RenewLog for Android</a> reminds you before a trial turns paid and before each charge. No bank login.</p>
+
+  <h2>How it works</h2>
+  <ul>
+    <li><strong>End date.</strong> Start date plus the trial length on the calendar. Days and weeks count calendar days. Months and years keep the same day number and stop at the end of a short month.</li>
+    <li><strong>Safe last day to cancel.</strong> The calendar day before the end date.</li>
+    <li><strong>Reminder.</strong> The number of calendar days you pick before the end date, at 9:00 your time. That is the same rule the RenewLog app uses for its trial warning.</li>
+  </ul>
+  <p>The sums use dates only, never hours. A local day can be 23 or 25 hours long when the clocks change, so adding 24 hours at a time can land on the wrong day.</p>
+
+  <h2>Worked example</h2>
+  <p>You start a 7-day trial on Sunday, 1 November 2026, and ask for a reminder 3 days before.</p>
+  <table>
+    <tr><td>Trial ends, first charge due</td><td>Sunday, 8 November 2026</td></tr>
+    <tr><td>Safe last day to cancel</td><td>Saturday, 7 November 2026</td></tr>
+    <tr><td>Reminder</td><td>Thursday, 5 November 2026, 9:00</td></tr>
+  </table>
+  <p>In the US the clocks go back on 1 November 2026. The answer does not change.</p>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>Services decide their own terms. Your receipt or the store's subscription page is the final word on the date.</li>
+    <li>The exact time of the charge is not something a calculator can know. That is why the safe day is a day early.</li>
+    <li>This page does not remind you by itself. Add the calendar event, or set your own alarm.</li>
+  </ul>
+
+  <h2>Frequently asked</h2>
+  <div class="card faq">
+    <h3>Does day one count?</h3>
+    <p>Count from the day you signed up as day zero. A 7-day trial started on 1 November usually ends on 8 November, at about the same time of day you started. Your receipt or the store's subscription page shows the exact date, and that date wins over any calculator.</p>
+    <h3>Why tell me to cancel a day early?</h3>
+    <p>The charge can happen at any time on the end date, and the service may run on a different time zone from yours. The App Store also asks you to cancel at least 24 hours before a trial ends. One day early clears all of that.</p>
+    <h3>What does "1 month" mean if I start on 31 January?</h3>
+    <p>It ends on the last day of February: the 28th, or the 29th in a leap year. Months keep the same day number where they can and stop at the end of a short month, like most billing systems. RenewLog works the same way.</p>
+    <h3>Does daylight saving change the date?</h3>
+    <p>No. This page works with calendar dates, not hours, so the clock change does not move the answer. Adding 24 hours at a time is what goes wrong: in the US on 1 November 2026, 24 hours after midnight is still 1 November.</p>
+    <h3>What is in the calendar file?</h3>
+    <p>One event at 9:00 on your reminder date with an alert. It uses local time, so it rings at 9:00 on that date wherever you are. The file is made in your browser. Open it with your calendar app to add the event.</p>
+    <h3>Is what I type sent anywhere?</h3>
+    <p>No. The dates and the service name stay in this browser tab.</p>
+  </div>
+
+  <p>Next: <a href="../guides/avoid-free-trial-charge.html">how to avoid being charged after a free trial</a>, or <a href="subscription-cost-calculator.html">add up what you already pay</a>.</p>
+
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a> · <a href="../#support">Support</a></footer>
+</main>
+<script src="schedule.js"></script>
+<script src="free-trial-ui.js"></script>
+</body>
+</html>

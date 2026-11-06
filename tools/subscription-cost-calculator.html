@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscription cost calculator: monthly and yearly total</title>
+<meta name="description" content="List your subscriptions with price and billing period, weekly, monthly, quarterly or yearly, and see the monthly and yearly total. Free, nothing is uploaded.">
+<link rel="canonical" href="https://eastframe-technology.github.io/renewlog-support/tools/subscription-cost-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subscription cost calculator">
+<meta property="og:description" content="List your subscriptions with price and billing period, weekly, monthly, quarterly or yearly, and see the monthly and yearly total. Free, nothing is uploaded.">
+<meta property="og:image" content="https://eastframe-technology.github.io/renewlog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/renewlog-support/tools/subscription-cost-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is a weekly subscription not just price times 52?","acceptedAnswer":{"@type":"Answer","text":"A year is 365.2425 days on average, which is about 52.18 weeks. Multiplying by 52 leaves out one or two charges a year. This calculator uses the average, the same as the RenewLog app."}},{"@type":"Question","name":"Does it convert currencies?","acceptedAnswer":{"@type":"Answer","text":"No. Each currency gets its own total. Converting would need exchange rates from the internet, and this page never goes online after it loads."}},{"@type":"Question","name":"Is my list saved or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The numbers stay in this browser tab and are gone when you close it. Nothing you type is uploaded, stored or logged."}},{"@type":"Question","name":"What about a subscription billed every 6 months?","acceptedAnswer":{"@type":"Answer","text":"Enter twice the price and choose Yearly. A 6-month plan at 30 is 60 a year, so type 60. The totals come out right."}},{"@type":"Question","name":"Does it include tax?","acceptedAnswer":{"@type":"Answer","text":"Only if the price you type does. Use the amount you actually see on your statement."}}]}
+</script>
+</head>
+<body>
+<main>
+  <nav><a class="home" href="../"><img src="../icon.png" alt="" width="24" height="24">RenewLog</a><a href="../tools/subscription-cost-calculator.html">Cost calculator</a><a href="../tools/free-trial-calculator.html">Trial calculator</a><a href="../guides/track-subscriptions-without-bank.html">Guides</a><a href="../index.html#support">Support</a></nav>
+
+  <h1>Subscription cost calculator</h1>
+  <p class="lead">List what you pay, weekly, monthly, quarterly or yearly, and see the total per month and per year. Nothing you type leaves this page.</p>
+
+  <div class="card">
+    <div id="rows"></div>
+    <div class="actions">
+      <button type="button" class="btn" id="add">+ Add a subscription</button>
+      <button type="button" class="btn" id="example">Load the example</button>
+      <button type="button" class="btn" id="clear">Clear</button>
+    </div>
+    <noscript><p class="warn">This calculator needs JavaScript. The formula below works on paper too.</p></noscript>
+  </div>
+  <div class="result" id="result" aria-live="polite"></div>
+  <p class="after">Keeping this list? <a href="https://play.google.com/store/apps/details?id=com.eastframe.renewlog">RenewLog for Android</a> holds it on your phone and reminds you before each charge. No bank login.</p>
+
+  <h2>How it works</h2>
+  <p>Every subscription is turned into an average cost per month, then the months are added up and multiplied by 12.</p>
+  <table>
+    <tr><th>Billed</th><th>Cost per month</th></tr>
+    <tr><td>Weekly</td><td>price × 365.2425 ÷ 7 ÷ 12</td></tr>
+    <tr><td>Monthly</td><td>price</td></tr>
+    <tr><td>Quarterly</td><td>price ÷ 3</td></tr>
+    <tr><td>Yearly</td><td>price ÷ 12</td></tr>
+  </table>
+  <p>The 365.2425 is the average length of a year, leap years included. This is the same formula the RenewLog app uses, so the two give the same totals.</p>
+
+  <h2>Worked example</h2>
+  <table>
+    <tr><th>Subscription</th><th>Price</th><th class="num">Per month</th><th class="num">Per year</th></tr>
+    <tr><td>Music</td><td>$10.99 monthly</td><td class="num">$10.99</td><td class="num">$131.88</td></tr>
+    <tr><td>Cloud storage</td><td>$2.99 monthly</td><td class="num">$2.99</td><td class="num">$35.88</td></tr>
+    <tr><td>Language app</td><td>$6.99 weekly</td><td class="num">$30.39</td><td class="num">$364.72</td></tr>
+    <tr><td>Coffee box</td><td>$30 quarterly</td><td class="num">$10.00</td><td class="num">$120.00</td></tr>
+    <tr><td>News</td><td>$59.99 yearly</td><td class="num">$5.00</td><td class="num">$59.99</td></tr>
+    <tr><td><strong>Total</strong></td><td></td><td class="num"><strong>$59.37</strong></td><td class="num"><strong>$712.47</strong></td></tr>
+  </table>
+  <p>The prices are made up to show the sums. Notice the weekly plan. At $6.99 it sounds cheaper than the $10.99 monthly one, and it costs almost three times as much over a year.</p>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>These are averages. A given month can cost more than its average, because a yearly charge lands all at once.</li>
+    <li>Prices are taken as you type them. Price rises, discounts and intro offers are not modelled.</li>
+    <li>It is arithmetic, not financial advice.</li>
+  </ul>
+
+  <h2>Frequently asked</h2>
+  <div class="card faq">
+    <h3>Why is a weekly subscription not just price times 52?</h3>
+    <p>A year is 365.2425 days on average, which is about 52.18 weeks. Multiplying by 52 leaves out one or two charges a year. This calculator uses the average, the same as the RenewLog app.</p>
+    <h3>Does it convert currencies?</h3>
+    <p>No. Each currency gets its own total. Converting would need exchange rates from the internet, and this page never goes online after it loads.</p>
+    <h3>Is my list saved or sent anywhere?</h3>
+    <p>No. The numbers stay in this browser tab and are gone when you close it. Nothing you type is uploaded, stored or logged.</p>
+    <h3>What about a subscription billed every 6 months?</h3>
+    <p>Enter twice the price and choose Yearly. A 6-month plan at 30 is 60 a year, so type 60. The totals come out right.</p>
+    <h3>Does it include tax?</h3>
+    <p>Only if the price you type does. Use the amount you actually see on your statement.</p>
+  </div>
+
+  <p>Next: <a href="free-trial-calculator.html">find the end date of a free trial</a>, or read <a href="../guides/track-subscriptions-without-bank.html">how to build this list without connecting your bank</a>.</p>
+
+  <footer>© 2026 Eastframe Technology LLC · <a href="../privacy.html">Privacy policy</a> · <a href="../#support">Support</a></footer>
+</main>
+<script src="schedule.js"></script>
+<script src="subscription-cost-ui.js"></script>
+</body>
+</html>

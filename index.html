@@ -3,41 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RenewLog support</title>
-<meta name="description" content="Support and privacy policy for RenewLog, the subscription tracker with no bank login.">
-<style>
-  :root { color-scheme: light dark; --bg:#f6f8f7; --fg:#0b0f14; --muted:#5b6672; --accent:#059669; --card:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0b0f14; --fg:#ecf2f0; --muted:#9aa6b4; --accent:#34d399; --card:#131a20; } }
-  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:680px; margin:0 auto; padding:48px 16px 64px; }
-  h1 { font-size:34px; margin:0 0 4px; } h2 { margin-top:40px; font-size:22px; }
-  p.lead { color:var(--muted); margin-top:0; }
-  .card { background:var(--card); border-radius:14px; padding:16px 20px; margin:16px 0; }
-  a { color:var(--accent); }
-  .logo { width:72px; height:72px; border-radius:18px; display:block; margin-bottom:16px; }
-  footer { color:var(--muted); font-size:14px; margin-top:48px; }
-</style>
+<title>RenewLog: subscription tracker with no bank login, for Android</title>
+<meta name="description" content="Track subscriptions and free trials without connecting your bank. RenewLog shows monthly and yearly totals and reminds you before each charge. No ads, no account.">
+<link rel="canonical" href="https://eastframe-technology.github.io/renewlog-support/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RenewLog: subscription tracker with no bank login">
+<meta property="og:description" content="Track subscriptions and free trials without connecting your bank. RenewLog shows monthly and yearly totals and reminds you before each charge. No ads, no account.">
+<meta property="og:image" content="https://eastframe-technology.github.io/renewlog-support/img/og.jpg">
+<meta property="og:url" content="https://eastframe-technology.github.io/renewlog-support/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"RenewLog: Subscription Tracker","operatingSystem":"Android","applicationCategory":"FinanceApplication","description":"Subscription tracker with no bank login. Monthly and yearly totals, reminders before each charge and before a free trial ends. No ads, no subscription, no account.","downloadUrl":"https://play.google.com/store/apps/details?id=com.eastframe.renewlog","installUrl":"https://play.google.com/store/apps/details?id=com.eastframe.renewlog","image":"https://eastframe-technology.github.io/renewlog-support/img/og.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Eastframe Technology LLC"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can RenewLog cancel a subscription for me?","acceptedAnswer":{"@type":"Answer","text":"No, and no app can do that honestly without your passwords. RenewLog shows you what renews and when, and its \"How to cancel\" button opens the Google Play or App Store subscriptions page, or the cancel link you saved for that service."}},{"@type":"Question","name":"Why don't you connect to my bank?","acceptedAnswer":{"@type":"Answer","text":"So your bank details and your list stay out of anyone else's hands. Adding a subscription takes a few seconds with the built-in list of common services."}},{"@type":"Question","name":"Will it find my subscriptions by itself?","acceptedAnswer":{"@type":"Answer","text":"No. You enter them, because it reads nothing from your bank, email or phone. This guide shows where to look."}},{"@type":"Question","name":"I didn't get a reminder.","acceptedAnswer":{"@type":"Answer","text":"Check that notifications for RenewLog are allowed in your phone's settings and that \"Remind me before charges\" is on in RenewLog. Reminders fire at 9:00, one, three or seven days before the charge, as you choose."}},{"@type":"Question","name":"My subscriptions are in different currencies.","acceptedAnswer":{"@type":"Answer","text":"Each one keeps its own currency. Totals are shown per currency, led by the main currency you pick in Settings. Nothing is converted."}},{"@type":"Question","name":"What is free, and what does Pro add?","acceptedAnswer":{"@type":"Answer","text":"Free: up to 5 subscriptions with totals, reminders and trial alerts. RenewLog Pro, a single in-app purchase: unlimited subscriptions, spending by category, CSV export, backup and restore."}},{"@type":"Question","name":"Is there a subscription?","acceptedAnswer":{"@type":"Answer","text":"No. RenewLog Pro is a single purchase. Restore it on a new phone from Settings, and move your list with Back up and Restore."}}]}
+</script>
 </head>
 <body>
 <main>
-  <img class="logo" src="icon.png" alt="">
-  <h1>RenewLog</h1>
-  <p class="lead">Subscription tracker with no bank login. Free, with one optional unlock. No ads, no subscription, no account.</p>
+  <nav><a class="home" href="./"><img src="icon.png" alt="" width="24" height="24">RenewLog</a><a href="tools/subscription-cost-calculator.html">Cost calculator</a><a href="tools/free-trial-calculator.html">Trial calculator</a><a href="guides/track-subscriptions-without-bank.html">Guides</a><a href="index.html#support">Support</a></nav>
+
+  <h1>Track every subscription without connecting your bank</h1>
+  <p class="lead">RenewLog keeps what you pay for in one list, adds it up per month and per year, and warns you before each charge and before a free trial turns paid. You type the entries yourself. There is no bank login, no account, and your list stays on your phone.</p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.eastframe.renewlog"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .6.6.9 1.1.6l15.4-9.2c.5-.3.5-.9 0-1.2L5.1 2.2C4.6 1.9 4 2.2 4 2.8z"/></svg>Get it on Google Play</a>
+  <p class="note">Android. Free for up to 5 subscriptions with reminders. RenewLog Pro, one in-app purchase paid once, adds unlimited subscriptions, spending by category, CSV export, backup and restore.</p>
+
+  <div class="tools">
+    <a href="tools/subscription-cost-calculator.html"><strong>Subscription cost calculator</strong><span>List what you pay and see the monthly and yearly total. Works here in the browser.</span></a>
+    <a href="tools/free-trial-calculator.html"><strong>Free trial end date calculator</strong><span>Find the day a trial ends, the last safe day to cancel and when to set a reminder.</span></a>
+  </div>
+
+  <div class="shots" aria-label="Screenshots from the Android app">
+    <img src="img/shot-1.webp" width="400" height="889" alt="Upcoming list with monthly and yearly totals and the charges due in the next 30 days">
+    <img src="img/shot-2.webp" width="400" height="889" alt="Add subscription screen with a list of common services" loading="lazy">
+    <img src="img/shot-3.webp" width="400" height="889" alt="Editing a subscription with price, billing period, next charge and a free trial end date" loading="lazy">
+    <img src="img/shot-4.webp" width="400" height="889" alt="Spending screen with totals by category" loading="lazy">
+    <img src="img/shot-5.webp" width="400" height="889" alt="Settings with reminders one, three or seven days before a charge" loading="lazy">
+    <img src="img/shot-6.webp" width="400" height="889" alt="The upcoming list in the light theme" loading="lazy">
+  </div>
+
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="card"><h3>One list, soonest first</h3>Weekly, monthly, yearly or any custom cycle, in any currency. About 55 common services are ready to pick, or type your own. Dates roll forward after each charge, even on the 31st.</div>
+    <div class="card"><h3>Real totals</h3>What you pay per month and per year, and what is due in the next 30 days. A weekly charge counts as a weekly charge, so the total does not flatter you.</div>
+    <div class="card"><h3>Reminders from your phone</h3>A notification at 9:00, one, three or seven days before each charge, as you choose. Your phone creates it, so nothing goes through a server.</div>
+    <div class="card"><h3>Free trial warnings</h3>Enter the day a trial ends and get a separate warning before it turns paid.</div>
+  </div>
+
+  <h2>Where it helps</h2>
+  <ul>
+    <li><strong>You signed up for a trial and worry you will forget.</strong> Add it with the end date. <a href="guides/avoid-free-trial-charge.html">How to avoid the charge</a>.</li>
+    <li><strong>A yearly renewal keeps surprising you.</strong> A list sorted by date shows it coming a month ahead.</li>
+    <li><strong>You do not want to hand a budgeting app your bank login.</strong> <a href="guides/track-subscriptions-without-bank.html">How to track subscriptions by hand</a>, and what you give up.</li>
+    <li><strong>You want to know the total.</strong> Weekly, monthly and yearly charges are hard to add up in your head.</li>
+  </ul>
+
+  <h2>What it will not do</h2>
+  <p>RenewLog cannot see your charges, so it finds nothing by itself and you add each subscription by hand. It cannot cancel anything for you. Its "How to cancel" button opens the right store page or the cancel link you saved, and the rest is up to you. If you want automatic detection from your bank, this is not that app.</p>
 
   <h2 id="support">Support</h2>
   <div class="card">
     <p>Questions, bugs, or feature requests: email <a href="mailto:contact@eastframe-technology.com">contact@eastframe-technology.com</a>. A human reads every message, usually the same day.</p>
-    <p>A <a href="renewlog-ios-demo.mp4">2-minute captioned walkthrough</a> shows every feature.</p>
+    <p>A <a href="renewlog-ios-demo.mp4">2-minute captioned walkthrough</a> shows every feature. It was filmed on an iPhone; the Android app has the same screens.</p>
   </div>
 
   <h2>Frequently asked</h2>
-  <div class="card">
-    <p><strong>Can RenewLog cancel a subscription for me?</strong> No, and no app can do that honestly without your passwords. RenewLog shows you what renews and when, and its "How to cancel" button opens the App Store or Google Play subscriptions page, or the cancel link you saved for that service.</p>
-    <p><strong>Why don't you connect to my bank?</strong> So nothing you pay for ever leaves your phone. Adding a subscription takes a few seconds with the built-in list of common services.</p>
-    <p><strong>I didn't get a reminder.</strong> Check that notifications for RenewLog are allowed in your phone's settings and that "Remind me before charges" is on in RenewLog. Reminders fire at 9:00, one, three or seven days before the charge, as you choose.</p>
-    <p><strong>My subscriptions are in different currencies.</strong> Each one keeps its own currency. Totals are shown per currency, led by the main currency you pick in Settings.</p>
-    <p><strong>Is there a subscription?</strong> No. RenewLog Pro is a single purchase. Restore it on a new phone from Settings, and move your list with Back up and Restore.</p>
+  <div class="card faq">
+    <h3>Can RenewLog cancel a subscription for me?</h3>
+    <p>No, and no app can do that honestly without your passwords. RenewLog shows you what renews and when, and its "How to cancel" button opens the Google Play or App Store subscriptions page, or the cancel link you saved for that service.</p>
+    <h3>Why don't you connect to my bank?</h3>
+    <p>So your bank details and your list stay out of anyone else's hands. Adding a subscription takes a few seconds with the built-in list of common services.</p>
+    <h3>Will it find my subscriptions by itself?</h3>
+    <p>No. You enter them, because it reads nothing from your bank, email or phone. <a href="guides/find-subscriptions-google-play-app-store.html">This guide shows where to look</a>.</p>
+    <h3>I didn't get a reminder.</h3>
+    <p>Check that notifications for RenewLog are allowed in your phone's settings and that "Remind me before charges" is on in RenewLog. Reminders fire at 9:00, one, three or seven days before the charge, as you choose.</p>
+    <h3>My subscriptions are in different currencies.</h3>
+    <p>Each one keeps its own currency. Totals are shown per currency, led by the main currency you pick in Settings. Nothing is converted.</p>
+    <h3>What is free, and what does Pro add?</h3>
+    <p>Free: up to 5 subscriptions with totals, reminders and trial alerts. RenewLog Pro, a single in-app purchase: unlimited subscriptions, spending by category, CSV export, backup and restore.</p>
+    <h3>Is there a subscription?</h3>
+    <p>No. RenewLog Pro is a single purchase. Restore it on a new phone from Settings, and move your list with Back up and Restore.</p>
   </div>
+
+  <h2>Guides</h2>
+  <ul>
+    <li><a href="guides/track-subscriptions-without-bank.html">How to track subscriptions without connecting your bank</a></li>
+    <li><a href="guides/avoid-free-trial-charge.html">How to avoid being charged after a free trial</a></li>
+    <li><a href="guides/find-subscriptions-google-play-app-store.html">How to find what you are subscribed to on Google Play and the App Store</a></li>
+  </ul>
 
   <h2 id="privacy">Privacy policy</h2>
   <div class="card">
@@ -51,7 +106,7 @@
     <p><strong>Changes.</strong> A new version of this policy will be published at this address with a new effective date.</p>
   </div>
 
-  <footer>© 2026 Eastframe Technology LLC</footer>
+  <footer>© 2026 Eastframe Technology LLC · <a href="privacy.html">Privacy policy</a> · <a href="#support">Support</a></footer>
 </main>
 </body>
 </html>
